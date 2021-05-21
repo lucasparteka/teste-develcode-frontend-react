@@ -1,11 +1,11 @@
 class UserService {
 
     constructor() {
-        this.urlApiJobs = "http://localhost:4001/users";
+        this.urlApiUsers = process.env.REACT_APP_URL_API + "/users" || "http://localhost:4001/users";
     }
 
     async insertUser(user) {
-        await fetch(this.urlApiJobs, {
+        await fetch(this.urlApiUsers, {
             method: "POST",
             headers: {
                 Accept: 'application/json',
@@ -16,7 +16,8 @@ class UserService {
     }
 
     async listUsers() {
-        let result = await fetch(this.urlApiJobs, {
+        let result = await fetch(this.urlApiUsers, {
+            method: "GET",
             headers: {
                 Accept: 'application/json',
                 'Content-type': 'application/json',
@@ -26,7 +27,7 @@ class UserService {
     }
 
     async editUser(user) {
-        await fetch(this.urlApiJobs, {
+        await fetch(this.urlApiUsers, {
             method: "PUT",
             headers: {
                 Accept: 'application/json',

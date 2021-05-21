@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "./context/UserContext";
 import { Row, Col, Button, Divider } from "antd";
 import './App.css';
 import UserBox from "./components/UserBox";
 import InsertUser from "./components/InsertUser";
-import InfoUser from "./components/InfoUser";
 
 const App = () => {
 

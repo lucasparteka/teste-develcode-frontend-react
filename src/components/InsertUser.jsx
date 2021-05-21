@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
-import { Modal, Form, Input, Button, DatePicker, ConfigProvider, Radio, Space, notification } from "antd"
+import { Modal, Form, Input, Button, DatePicker, Radio, Space, notification } from "antd"
 import { UserContext } from "../context/UserContext";
 import locale from 'antd/es/date-picker/locale/pt_BR';
+import LazyImage from "./LazyImage";
 import { avatares } from "../util/avatar";
-import "../App.css"
+import "../App.css";
 
 const InsertUser = ({ showModal, setShowModal }) => {
 
   const {insertUser} = useContext(UserContext)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const handleInsertUser = async (values) => {
     try {
@@ -62,10 +63,10 @@ const InsertUser = ({ showModal, setShowModal }) => {
         >
           <Radio.Group >
             <Space direction="horizontal">
-            <Radio value={avatares.monster1}><img className="pick-avatar" src={avatares.monster1}/></Radio>
-            <Radio value={avatares.monster2}><img className="pick-avatar" src={avatares.monster2}/></Radio>
-            <Radio value={avatares.monster3}><img className="pick-avatar" src={avatares.monster3}/></Radio>
-            <Radio value={avatares.monster4}><img className="pick-avatar" src={avatares.monster4}/></Radio>
+            <Radio value={avatares.monster1}><LazyImage src={avatares.monster1}/></Radio>
+            <Radio value={avatares.monster2}><LazyImage src={avatares.monster2}/></Radio>
+            <Radio value={avatares.monster3}><LazyImage src={avatares.monster3}/></Radio>
+            <Radio value={avatares.monster4}><LazyImage src={avatares.monster4}/></Radio>
             </Space>
           </Radio.Group>
         </Form.Item>
